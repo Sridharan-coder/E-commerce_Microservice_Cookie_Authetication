@@ -1,0 +1,30 @@
+.header-menu .ant-menu-item::after {
+  border: none !important;
+}
+
+.sellerContent{
+  margin: 5px 10px 0px 10px;
+  color: rgb(101, 101, 101);
+  overflow-y: auto;
+  height: 89vh;
+  background-color: #ebebeb;
+}
+
+.sellerContent::-webkit-scrollbar {
+  display: none;
+}
+
+.sellerContentTitle {
+  color: rgb(77, 77, 77) !important;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px;
+}
+
+.sellerContentInfo {
+  color: rgb(101, 101, 101) !important;
+  margin-bottom: 5px;
+  box-sizing: content-box !important;
+  font-size: small;
+  padding-left: 30px;
+}
