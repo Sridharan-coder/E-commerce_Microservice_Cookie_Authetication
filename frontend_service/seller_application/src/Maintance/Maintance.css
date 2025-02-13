@@ -1,0 +1,62 @@
+/* General Reset and Full-Height Styling */
+ /* .maintanceBody {
+    padding: 0;
+    margin: 0;
+    width: 100vh;
+    height: 1000vh;
+  } */
+  
+  .maintanceBody>*,.maintanceBody {
+    box-sizing: border-box ;
+  }
+  
+  /* Body Styling */
+  .maintanceBody {
+    text-align: center;
+    padding: 0;
+    background: #d6433b;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Heading Styling */
+  .h1 {
+    font-size: 50px;
+    font-weight: 100;
+    text-align: center;
+  }
+  
+  /* Article Styling */
+  .maintanceArticle {
+    display: block;
+    width: 700px;
+    padding: 50px;
+    margin: 0 auto;
+  }
+  
+  /* Link Styling */
+  .PageNavigator {
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .PageNavigator:hover {
+    text-decoration: none;
+  }
+  
+  /* SVG Styling */
+  .maintanceSVG {
+    width: 75px;
+    margin-top: 1em;
+  }
+  
+  /* .cls-1 class for SVG color */
+  .cls-1 {
+    fill: #fff;
+  }
+  
