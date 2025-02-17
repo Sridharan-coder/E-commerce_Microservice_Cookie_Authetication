@@ -66,7 +66,7 @@ public class MyUserDetailService implements UserDetailsService {
 		else {
 			
 			buyer =  buyerRepository.findByEmail(username);
-			if (buyer.getU_emailAddress().equals(username)) {
+			if (buyer!=null && buyer.getU_emailAddress().equals(username)) {
 				System.out.println("Myuser Details line 109 : "+buyer.getU_password()+"Userssssss-------->"+buyer.getU_emailAddress());
 				return User.withUsername(buyer.getU_emailAddress()) 
 						.password(buyer.getU_password())

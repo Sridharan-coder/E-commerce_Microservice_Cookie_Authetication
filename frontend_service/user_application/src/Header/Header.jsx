@@ -76,7 +76,7 @@ const Header = ({setIsMaintance, buyerInfo, setBuyerInfo }) => {
                 },
                 {
                     label: <>Wishlist {buyerInfo?.u_whitelist?.length ? `( ${buyerInfo.u_whitelist.length} )` : ""} </>,
-                    key: 'wishlist',
+                    key: 'myWishlist',
                     icon: <IoHeartOutline color='blue' />
                 },
                 {
@@ -238,7 +238,9 @@ const Header = ({setIsMaintance, buyerInfo, setBuyerInfo }) => {
 
         }
         else if (e.key === "logout") {
-            axios.get(`http://localhost:3321/user/userLogout`, {
+            const values={u_emailAddress:existedData.u_emailAddress,u_password:existedData.u_password}
+            console.log(values)
+            axios.get(`http://localhost:3321/user/userLogout`,{
                 withCredentials: true
             })
                 .then((response) => {
@@ -253,7 +255,6 @@ const Header = ({setIsMaintance, buyerInfo, setBuyerInfo }) => {
                         u_whitelist: [],
                         u_loggedIn: false,
                     })
-                    navigate("/");
                 })
                 .catch((error) => {
                     console.error(error?.response?.data?.message);
@@ -280,6 +281,9 @@ const Header = ({setIsMaintance, buyerInfo, setBuyerInfo }) => {
         }
         else if (e.key === "myProfile") {
             navigate(`/profileInformation?id=${existedData.u_id}`)
+        }
+        else if(e.key==="myWishlist"){
+            navigate("/myWishlist")
         }
     };
 
@@ -371,7 +375,7 @@ const Header = ({setIsMaintance, buyerInfo, setBuyerInfo }) => {
                         paddingTop: 6,
                         width: "100%",
                         fontSize: 16,
-                        backgroundColor: "blue",
+                        backgroundColor: "#2874f0",
                         color: "whitesmoke",
                     }}
                     className="productSearch header-menu"
@@ -386,7 +390,7 @@ const Header = ({setIsMaintance, buyerInfo, setBuyerInfo }) => {
                         paddingTop: 6,
                         width: "100%",
                         fontSize: 16,
-                        backgroundColor: "blue",
+                        backgroundColor: "#2874f0",
                         color: "whitesmoke",
                     }}
                     className="productSearch header-menu"
