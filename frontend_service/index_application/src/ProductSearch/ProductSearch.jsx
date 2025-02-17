@@ -259,24 +259,24 @@ const ProductSearch = () => {
     else if (e.key === "logout") {
       axios.get(`http://localhost:3321/user/userLogout`, {
         withCredentials: true
-    })
+      })
         .then((response) => {
-            dispatch(logoutBuyerDetails());
-            setBuyerInfo({
-                u_id: "",
-                u_name: "",
-                u_phoneNumber: "",
-                u_emailAddress: "",
-                u_password: '',
-                u_carts: [],
-                u_whitelist: [],
-                u_loggedIn: false,
-            })
-            navigate("/");
+          dispatch(logoutBuyerDetails());
+          setBuyerInfo({
+            u_id: "",
+            u_name: "",
+            u_phoneNumber: "",
+            u_emailAddress: "",
+            u_password: '',
+            u_carts: [],
+            u_whitelist: [],
+            u_loggedIn: false,
+          })
+          navigate("/");
         })
         .catch((error) => {
-            console.error(error?.response?.data?.message);
-            alert(error?.response?.data?.message);
+          console.error(error?.response?.data?.message);
+          alert(error?.response?.data?.message);
         })
     }
     else if (e.key === "becomeSeller") {
@@ -304,7 +304,7 @@ const ProductSearch = () => {
         })
         .catch(error => navigate("/maintance"))
     }
-    else if(e.key==="logo"){
+    else if (e.key === "logo") {
       navigate("/")
     }
   };
@@ -437,38 +437,42 @@ const ProductSearch = () => {
       <div className="searchedProduct">
         <Row>
           <Col span={24} key="Productss">
-            <Space wrap size={[25, 31]}>
-              {products.map((item) => (
-                <>
-                  <Card
-                    key={item.p_id}
-                    style={{
-                      width: 280,
-                      height: 350,
-                      verticalAlign: "center",
-                    }}
-                    hoverable
-                    onClick={() => handleProduct(item)}
-                    cover={
-                      <><img
-                        src={item.p_image}
-                        alt={item.p_name}
-                        height={250}
-                        className="cardImage"
+            {products.length ?
+              <Space wrap size={[25, 31]}>
+                {products.map((item) => (
+                  <>
+                    <Card
+                      key={item.p_id}
+                      style={{
+                        width: 280,
+                        height: 350,
+                        verticalAlign: "center",
+                      }}
+                      hoverable
+                      onClick={() => handleProduct(item)}
+                      cover={
+                        <><img
+                          src={item.p_image}
+                          alt={item.p_name}
+                          height={250}
+                          className="cardImage"
+                        />
+                        </>
+                      }
+                      className="ProductsearchCard"
+                    >
+                      <Meta
+                        title={item.p_name.charAt(0).toUpperCase() + item.p_name.slice(1)}
+                        description={<b style={{ color: "black" }}>&#8377; {item.p_price}</b>}
+                        style={{ textAlign: "center" }}
                       />
-                      </>
-                    }
-                    className="ProductsearchCard"
-                  >
-                    <Meta
-                      title={item.p_name.charAt(0).toUpperCase() + item.p_name.slice(1)}
-                      description={<b style={{ color: "black" }}>&#8377; {item.p_price}</b>}
-                      style={{ textAlign: "center" }}
-                    />
-                  </Card>
-                </>
-              ))}
-            </Space>
+                    </Card>
+                  </>
+                ))}
+              </Space>
+              :
+              <div style={{display:"flex",justifyContent:"center",fontSize:20}}>No Data Found</div>
+            }
           </Col>
         </Row>
       </div>

@@ -30,14 +30,14 @@ const Buyer = ({setIsMaintance}) => {
         {
             key: 'myOrder',
             icon: <BiSolidUpArrowSquare size={25} style={{ color: "blue" }} />,
-            label: 'MY ORDERS',
+            label: <b style={{color:"grey"}}>MY ORDERS</b>,
         },
     ]
     const item2 = [
         {
 
             icon: <PiUserFill />,
-            label: 'ACCOUNT SETTINGS',
+            label: <b>ACCOUNT SETTINGS</b>,
             disabled: true,
         },
         {
@@ -56,7 +56,7 @@ const Buyer = ({setIsMaintance}) => {
     const item3 = [
         {
             icon: <IoMdWallet />,
-            label: 'PAYMENTS',
+            label: <b>PAYMENTS</b>,
             disabled: true
         },
         {
@@ -75,7 +75,7 @@ const Buyer = ({setIsMaintance}) => {
     const item4 = [
         {
             icon: <RiFolderUserFill />,
-            label: "MY STUFF",
+            label: <b>MY STUFF</b>,
             disabled: true
         },
         {
@@ -99,7 +99,7 @@ const Buyer = ({setIsMaintance}) => {
     const item5 = [
         {
             key: "logout",
-            label: "LOGOUT",
+            label: <b>LOGOUT</b>,
             icon: <FaPowerOff />
         }
     ]
@@ -188,7 +188,7 @@ const Buyer = ({setIsMaintance}) => {
                         </Col>
                         <Col span={1} style={{ backgroundColor: "#ebebeb" }}></Col>
                     </Col>
-                    <Col span={14} style={{ padding: 10, backgroundColor: "white" }}>
+                    <Col span={14} style={{ backgroundColor: "white" }}>
 
                         <Routes>
                             {InnerRouting.map((route, index) => {
@@ -210,7 +210,7 @@ const Buyer = ({setIsMaintance}) => {
                                                     </Row>
                                                 }
                                             >
-                                                <Component setIsMaintance={setIsMaintance}/>
+                                                <Component setIsMaintance={setIsMaintance} />
                                             </Suspense>
                                         }
                                     />

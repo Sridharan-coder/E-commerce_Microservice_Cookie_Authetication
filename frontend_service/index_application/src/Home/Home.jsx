@@ -361,7 +361,8 @@ function Home() {
                     , {
                         headers: {
                             Accept: "application/json"
-                        }
+                        },
+                        withCredentials:true
 
                     }
                 )
@@ -371,18 +372,27 @@ function Home() {
 
                     })
                     .catch((error) => {
-                        alert(error.message);
-                        dispatch(logoutBuyerDetails());
-                        setBuyerInfo({
-                            u_id: "",
-                            u_name: "",
-                            u_phoneNumber: "",
-                            u_emailAddress: "",
-                            u_password: '',
-                            u_carts: [],
-                            u_whitelist: [],
-                            u_loggedIn: false,
-                        });
+                        axios.get(`http://localhost:3321/user/userLogout`, {
+                            withCredentials: true
+                        })
+                            .then((response) => {
+                                dispatch(logoutBuyerDetails());
+                                setBuyerInfo({
+                                    u_id: "",
+                                    u_name: "",
+                                    u_phoneNumber: "",
+                                    u_emailAddress: "",
+                                    u_password: '',
+                                    u_carts: [],
+                                    u_whitelist: [],
+                                    u_loggedIn: false,
+                                })
+                                navigate("/");
+                            })
+                            .catch((error) => {
+                                console.error(error?.response?.data?.message);
+                                alert(error?.response?.data?.message);
+                            })
                     });
             }
         }
