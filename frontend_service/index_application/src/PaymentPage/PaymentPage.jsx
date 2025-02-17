@@ -181,7 +181,7 @@ const PaymentPage = () => {
 
     const getSessionId = async () => {
         try {
-            const res = await axios.get(`http://localhost:3323/payment/${totalPrice}`);
+            const res = await axios.get(`http://localhost:3322/payment/${totalPrice}`);
             if (res.data &&( res.data.payment_session_id||res.data.paymentSessionId)) {
                 return {orders:res.data.orderId||res.data.order_id,sessionId:res.data.payment_session_id || res.data.paymentSessionId};
             }
@@ -193,7 +193,7 @@ const PaymentPage = () => {
     const verifyPayment = async (orderId) => {
         try {
 
-            const res = await axios.post("http://localhost:3323/verify", { orderId });
+            const res = await axios.post("http://localhost:3322/verify", { orderId });
             if (res && res.data) {
                 alert("Payment verified");
 

@@ -39,6 +39,7 @@ public class JwtFilter extends OncePerRequestFilter{
 		List<String> urls= new ArrayList<>();
 		urls.add("/user/userLogin");
 		urls.add("/user/createUser");
+		urls.add("/user/userLogout");
 		
 //		String authHeader=request.getHeader("Authorization");
 		String token=null;
@@ -55,6 +56,7 @@ public class JwtFilter extends OncePerRequestFilter{
 				}
 			}
 		}
+		System.err.println("========"+token);
 		if(token!=null) {
 			
 			userName=jwtServices.extractUsername(token);

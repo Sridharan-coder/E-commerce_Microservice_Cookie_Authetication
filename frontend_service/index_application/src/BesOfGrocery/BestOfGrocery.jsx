@@ -18,12 +18,12 @@ const BestOfGrocery = () => {
         navigate(`/item/${type}?name=${productData.p_name}&id=${productData.p_id}`);
     };
 
-    const handleProductType=()=>{
+    const handleProductType = () => {
         navigate("/product/grocery")
     }
-    
+
     useEffect(() => {
-        
+
         try {
             async function fetchData() {
                 await axios
@@ -39,56 +39,62 @@ const BestOfGrocery = () => {
     }, [type]);
 
     return (
-        <div className="bestOfEletronics">
-            <div className="searchedProduct">
-                <Row justify={"space-between"}>
-                    <Col style={{ fontSize: 25 }}>Best of Grocery</Col>
-                    <Col>
-                        <span onClick={()=>handleProductType()} className="productTypeDisplyer">
+        <>
+            {products.length ?
+                <div className="bestOfEletronics">
+                    <div className="searchedProduct">
+                        <Row justify={"space-between"}>
+                            <Col style={{ fontSize: 25 }}>Best of Grocery</Col>
+                            <Col>
+                                <span onClick={() => handleProductType()} className="productTypeDisplyer">
 
-                            <IoIosArrowDroprightCircle size={40} color="blue" />
-                        </span>
-                    </Col>
-                </Row>
-                <Row style={{ marginTop: 15 }}>
-                    <Col span={20} >
-                        <Space size={[45, 45]}>
-                            {products.map((item) => (
-                                    <Card
-                                        key={'grocery'+item.p_id}
-                                        style={{
-                                            width: 240,
-                                            height: 270,
-                                            verticalAlign: "center",
-                                        }}
-                                        hoverable
-                                        onClick={() => handleProduct(item)}
-                                        cover={
-                                            <img
-                                            key={item.p_name}
-                                                src={item.p_image}
-                                                alt={item.p_name}
-                                                width={210}
-                                                height={210}
-                                                className="cardImage1"
+                                    <IoIosArrowDroprightCircle size={40} color="blue" />
+                                </span>
+                            </Col>
+                        </Row>
+                        <Row style={{ marginTop: 15 }}>
+                            <Col span={20} >
+                                <Space size={[45, 45]}>
+                                    {products.map((item) => (
+                                        <Card
+                                            key={'grocery' + item.p_id}
+                                            style={{
+                                                width: 240,
+                                                height: 270,
+                                                verticalAlign: "center",
+                                            }}
+                                            hoverable
+                                            onClick={() => handleProduct(item)}
+                                            cover={
+                                                <img
+                                                    key={item.p_name}
+                                                    src={item.p_image}
+                                                    alt={item.p_name}
+                                                    width={210}
+                                                    height={210}
+                                                    className="cardImage1"
+                                                />
+                                            }
+                                            bordered={false}
+                                            className="homeProductCard"
+                                        >
+                                            <Meta
+                                                key={'groceryMeta' + item.id}
+                                                title={item.p_name.charAt(0).toUpperCase() + item.p_name.slice(1)}
+                                                description={<b style={{ color: "black" }}>&#8377; {item.p_price}</b>}
+                                                style={{ textAlign: "center" }}
                                             />
-                                        }
-                                        bordered={false}
-                                        className="homeProductCard"
-                                    >
-                                        <Meta
-                                        key={'groceryMeta'+item.id}
-                                            title={item.p_name.charAt(0).toUpperCase() + item.p_name.slice(1)}
-                                            description={<b style={{ color: "black" }}>&#8377; {item.p_price}</b>}
-                                            style={{ textAlign: "center" }}
-                                        />
-                                    </Card>
-                            ))}
-                        </Space>
-                    </Col>
-                </Row>
-            </div>
-        </div>
+                                        </Card>
+                                    ))}
+                                </Space>
+                            </Col>
+                        </Row>
+                    </div>
+                </div>
+                :
+                ""
+            }
+        </>
     );
 };
 

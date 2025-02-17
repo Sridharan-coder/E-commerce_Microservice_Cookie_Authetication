@@ -164,7 +164,7 @@ const ProfileInformation = () => {
     }, [])
 
     return (
-        <>
+        <Col style={{padding:10}}>
             <Row style={{ lineHeight: 1.6 }}>
                 <Typography style={{ fontWeight: 700 }}> Personal Information</Typography>
                 <Col onClick={() => setIsEditName(!isEditname)} style={{ cursor: "pointer", marginLeft: 10, color: "blue", fontWeight: 650 }}>  {isEditname ? "Edit" : "Cancel"}</Col>
@@ -243,7 +243,7 @@ const ProfileInformation = () => {
             <Typography>Flipkart has a 'single sign-on' policy. Any changes will reflect in your Seller account also.</Typography>
             <Typography style={{ color: "lightblue", fontWeight: 700 }}>Deactivate Account</Typography>
             <Typography style={{ color: "red", fontWeight: 700 }}>Delete Account</Typography>
-        </>
+        </Col>
     )
 }
 
