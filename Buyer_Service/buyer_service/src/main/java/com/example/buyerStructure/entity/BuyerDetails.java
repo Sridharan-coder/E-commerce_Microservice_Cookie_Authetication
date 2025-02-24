@@ -129,10 +129,5 @@ public class BuyerDetails {
 				+ ", u_emailAddress=" + u_emailAddress + ", u_password=" + u_password + ", u_carts=" + u_carts
 				+ ", u_whitelist=" + u_whitelist + ", __v=" + __v + "]";
 	}
-
-	public void getSomeLazyLoadedField() {
-		// TODO Auto-generated method stub
-		
-	}
 	
 }

@@ -54,7 +54,6 @@ public class MyUserDetailService implements UserDetailsService {
 			System.out.println("+++++>");
 			buyer = buyerRepository.findById(Integer.parseInt(username)).orElseThrow(() -> new EntityNotFoundException("User not found"));
 			System.err.println("Myuser Details line 95 : " + buyer.toString());
-			buyer.getSomeLazyLoadedField();
 			if (buyer.getU_id() == Integer.parseInt(username)) {
 				System.out.println("Myuser Details line 97 : " + "username --> " + buyer.toString());
 				return User.withUsername(buyer.getU_emailAddress()).password(buyer.getU_password())

@@ -399,7 +399,7 @@ const ProductSearch = () => {
             paddingTop: 6,
             width: "100%",
             fontSize: 16,
-            backgroundColor: "blue",
+            backgroundColor: "#2874f0",
             color: "whitesmoke",
           }}
           className="productSearch header-menu"
@@ -414,7 +414,7 @@ const ProductSearch = () => {
             paddingTop: 6,
             width: "100%",
             fontSize: 16,
-            backgroundColor: "blue",
+            backgroundColor: "#2874f0",
             color: "whitesmoke",
           }}
           className="productSearch header-menu"

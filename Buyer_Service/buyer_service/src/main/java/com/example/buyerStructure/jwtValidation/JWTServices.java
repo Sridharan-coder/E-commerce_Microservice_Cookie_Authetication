@@ -90,10 +90,6 @@ public String generateToken(BuyerDetails buyerDetails) {
 //		return extractClaim(token, Claims::get);
 //	}
 
-//	private String extractClaim(String token, Object claimResolver) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
 	
 	private String extractEmail(String token) {
 //		System.out.println("-------->"+extractClaim(token, t -> t.get("email")));
