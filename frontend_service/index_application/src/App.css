@@ -229,10 +229,15 @@
 .cartDetails,
 .paymentPage {
   background-color: #ebebeb;
-  min-height: 100vh;
+  height: 92vh;
   width: 100%;
   overflow-x: hidden;
 }
+
+.paymentPage::-webkit-scrollbar {
+  display: none;
+}
+
 
 .cartContent {
   margin-top: 20px;

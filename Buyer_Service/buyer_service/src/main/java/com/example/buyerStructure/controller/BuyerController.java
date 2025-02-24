@@ -2,7 +2,6 @@ package com.example.buyerStructure.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,8 +45,8 @@ public class BuyerController {
 	}
 
 	@GetMapping("/getUserDetals/{u_id}")
-	public ResponseEntity<?> getUser(@PathVariable Integer u_id,@CookieValue("u_token") String u_token) {
-		System.err.println("user Controller line 45 --> " + u_token);
+	public ResponseEntity<?> getUser(@PathVariable Integer u_id) {
+		System.err.println("user Controller line 45 --> " + u_id);
 		return buyerDao.getUser(u_id);
 	}
 
