@@ -194,7 +194,8 @@ const PaymentPage = () => {
         try {
 
             const res = await axios.post("http://localhost:3322/verify", { orderId });
-            if (res && res.data) {
+            if (res && res.data.length) {
+                console.log(res)
                 alert("Payment verified");
 
                 productDetails.map((item, index) => handleStocks(item, index))
@@ -245,7 +246,7 @@ const PaymentPage = () => {
         <>
             <Menu
                 onClick={onClick}
-                style={{ height: 70, paddingLeft: 62, paddingTop: 6, width: "100%", fontSize: 16, backgroundColor: "blue", color: "whitesmoke" }}
+                style={{ height: 70, paddingLeft: 62, paddingTop: 6, width: "100%", fontSize: 16, backgroundColor: "#2874f0", color: "whitesmoke" }}
                 className="productSearch"
                 mode="horizontal"
                 items={items}

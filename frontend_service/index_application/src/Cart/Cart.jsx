@@ -383,7 +383,7 @@ const Cart = () => {
                 {buyerInfo.u_loggedIn ?
                     <Menu
                         onClick={onClick}
-                        style={{ height: 70, paddingLeft: 62, paddingRight: 62, paddingTop: 6, width: "100%", fontSize: 16, backgroundColor: "blue", color: "whitesmoke", display: "flex", justifyContent: "space-evenly" }}
+                        style={{ height: 70, paddingLeft: 62, paddingRight: 62, paddingTop: 6, width: "100%", fontSize: 16, backgroundColor: "#2874f0", color: "whitesmoke", display: "flex", justifyContent: "space-evenly" }}
                         className="productSearch"
                         mode="horizontal"
                         items={items}
@@ -391,7 +391,7 @@ const Cart = () => {
                     :
                     <Menu
                         onClick={onClick}
-                        style={{ height: 70, paddingLeft: 62, paddingRight: 62, paddingTop: 6, width: "100%", fontSize: 16, backgroundColor: "blue", color: "whitesmoke", display: "flex", justifyContent: "space-evenly" }}
+                        style={{ height: 70, paddingLeft: 62, paddingRight: 62, paddingTop: 6, width: "100%", fontSize: 16, backgroundColor: "#2874f0", color: "whitesmoke", display: "flex", justifyContent: "space-evenly" }}
                         className="productSearch"
                         mode="horizontal"
                         items={items1}
