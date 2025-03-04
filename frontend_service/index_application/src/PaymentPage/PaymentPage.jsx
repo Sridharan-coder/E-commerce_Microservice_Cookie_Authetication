@@ -87,7 +87,6 @@ const PaymentPage = () => {
                 alert(error.response.data.message)
             })
 
-
     }
 
     const deliveryAddress = (values) => {
