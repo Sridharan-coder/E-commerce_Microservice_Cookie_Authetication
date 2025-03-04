@@ -24,7 +24,6 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import com.example.buyerStructure.jwtValidation.JwtFilter;
 
 
-
 @Configuration
 @EnableWebSecurity
 public class ApplicationConfiguration {
